@@ -39,7 +39,8 @@ const DeliveryDashboard = () => {
   useEffect(() => {
     fetchOrders();
 
-    const socket = new SockJS(`http://${config.Socket_URL}/order-updates`);
+    // const socket = new SockJS(`http://${config.Socket_URL}/order-updates`);
+    const socket = new SockJS(`http://170.187.200.195:8142/order-updates`);
 
     socket.onmessage = (event) => {
       const message = JSON.parse(event.data);
